@@ -9,7 +9,7 @@ import {
   TimeQuarter02Icon,
   CustomerService01Icon,
   PackageDeliveredIcon,
-  TicketStar01Icon,
+  TicketStarIcon,
   Mail01Icon,
   CheckmarkCircle02Icon,
   Loading03Icon,
