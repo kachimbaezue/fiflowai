@@ -323,7 +323,7 @@ function Operators() {
       desc: "Track, update and follow up on orders. Catch issues before customers do.",
     },
     {
-      icon: TicketStar01Icon,
+      icon: TicketStarIcon,
       title: "Ticketing & Escalation",
       desc: "Route and prioritize tickets intelligently. Escalate only what truly needs a human.",
     },
