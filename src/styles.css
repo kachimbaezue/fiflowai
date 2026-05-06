@@ -48,7 +48,7 @@
 }
 
 :root {
-  --radius: 1.25rem;
+  --radius: 0.625rem;
   /* Warm sand / paper inspired */
   --background: oklch(0.97 0.005 90);
   --foreground: oklch(0.18 0.01 80);
@@ -64,10 +64,10 @@
   --secondary-foreground: oklch(0.18 0.01 80);
   --muted: oklch(0.94 0.008 85);
   --muted-foreground: oklch(0.5 0.01 80);
-  --accent: oklch(0.85 0.18 95);
-  --accent-foreground: oklch(0.18 0.01 80);
-  --ink: oklch(0.16 0.005 80);
-  --ink-foreground: oklch(0.97 0.005 90);
+  --accent: #31356d;
+  --accent-foreground: oklch(0.98 0.005 90);
+  --ink: #31356d;
+  --ink-foreground: oklch(0.98 0.005 90);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0.008 85);
