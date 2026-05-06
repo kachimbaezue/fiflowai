@@ -48,7 +48,7 @@
 }
 
 :root {
-  --radius: 1.25rem;
+  --radius: 0.625rem;
   /* Warm sand / paper inspired */
   --background: oklch(0.97 0.005 90);
   --foreground: oklch(0.18 0.01 80);
