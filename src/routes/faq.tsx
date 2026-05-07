@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft02Icon, ArrowRight02Icon, Add01Icon, Minus01Icon } from "hugeicons-react";
+import { ArrowLeft02Icon, ArrowRight02Icon, Add01Icon, Remove01Icon } from "hugeicons-react";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
