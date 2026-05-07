@@ -68,7 +68,7 @@ function FAQPage() {
                 <div className="flex items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5">
                   <span className="text-sm font-semibold sm:text-base">{item.q}</span>
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground">
-                    {isOpen ? <Minus01Icon size={12} /> : <Add01Icon size={12} />}
+                    {isOpen ? <Remove01Icon size={12} /> : <Add01Icon size={12} />}
                   </span>
                 </div>
                 {isOpen && (
