@@ -49,25 +49,33 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className={`${CONTAINER} flex h-14 items-center justify-between`}>
-        <a href="#top" className="flex items-center gap-2">
-          <img src={LOGO} alt="FiFlowAI" className="h-6 w-6 rounded-md" />
-          <span className="text-sm font-semibold tracking-tight">FiFlowAI</span>
+        <a href="#top" className="flex items-center gap-2" aria-label="FiFlowAI home">
+          <img src={LOGO} alt="FiFlowAI" className="h-7 w-7 rounded-md" />
         </a>
         <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
           <a href="#features" className="hover:text-foreground transition-colors">Features</a>
           <a href="#sources" className="hover:text-foreground transition-colors">Data sources</a>
           <a href="#operators" className="hover:text-foreground transition-colors">Operators</a>
           <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+          <Link to="/faq" className="hover:text-foreground transition-colors">FAQ</Link>
         </nav>
-        <a
-          href="https://app.fiflowai.com/upgrade"
-          className="inline-flex items-center gap-1.5 rounded-md bg-ink px-3.5 py-1.5 text-xs font-semibold text-ink-foreground transition-transform hover:scale-[1.02] sm:text-sm"
-        >
-          Get started
-          <ArrowRight02Icon size={14} />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="https://app.fiflowai.com/login"
+            className="hidden text-sm text-muted-foreground hover:text-foreground sm:inline-block"
+          >
+            Sign in
+          </a>
+          <a
+            href="https://app.fiflowai.com/upgrade"
+            className="inline-flex items-center gap-1.5 rounded-md bg-ink px-3.5 py-1.5 text-xs font-semibold text-ink-foreground transition-transform hover:scale-[1.02] sm:text-sm"
+          >
+            Get started
+            <ArrowRight02Icon size={14} />
+          </a>
+        </div>
       </div>
     </header>
   );
