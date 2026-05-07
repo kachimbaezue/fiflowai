@@ -29,12 +29,17 @@ export const Route = createFileRoute("/")({
         content:
           "FiFlowAI explains what's happening in your store, why, and the actions to take next. Built for Shopify, Meta Ads, Google Analytics & more.",
       },
+      { name: "keywords", content: "ecommerce AI, inventory forecasting, Shopify analytics, sales insights, AI analytics platform, retail intelligence" },
       { property: "og:title", content: "FiFlowAI — From store data to clear next steps" },
       {
         property: "og:description",
         content: "Turn complex store data into smart, actionable insights. Skip the manual analysis.",
       },
+      { property: "og:site_name", content: "FiFlowAI" },
       { property: "og:type", content: "website" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://fiflowai.com/" },
     ],
   }),
   component: Landing,

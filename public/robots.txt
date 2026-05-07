@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://fiflowai.com/sitemap.xml
+Host: https://fiflowai.com
