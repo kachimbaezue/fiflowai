@@ -343,40 +343,97 @@ function Pricing() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border bg-surface">
-      <div className={`${CONTAINER} py-12`}>
-        <div className="grid gap-10 md:grid-cols-4">
-          <div className="md:col-span-2">
-            <div className="flex items-center gap-2">
-              <img src={LOGO} alt="FiFlowAI" className="h-6 w-6 rounded-md" />
-              <span className="text-sm font-semibold">FiFlowAI</span>
+    <footer className="relative mt-10 overflow-hidden bg-surface">
+      {/* CTA card */}
+      <div className={CONTAINER}>
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-ink p-8 text-ink-foreground sm:p-12">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-3xl"
+          />
+          <div className="relative grid gap-6 md:grid-cols-2 md:items-center">
+            <div>
+              <h2 className="text-2xl sm:text-3xl">Ready to see your store clearly?</h2>
+              <p className="mt-2 max-w-md text-sm text-ink-foreground/70">
+                Connect once. Get answers, not dashboards.
+              </p>
             </div>
-            <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-              The AI business analyst for e-commerce store owners.
+            <div className="flex flex-col gap-2 sm:flex-row sm:justify-end">
+              <a
+                href="https://app.fiflowai.com/upgrade"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-ink-foreground px-5 py-2.5 text-sm font-semibold text-ink hover:opacity-90"
+              >
+                Start for free
+                <ArrowRight02Icon size={14} />
+              </a>
+              <a
+                href="mailto:hello@fiflowai.com"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/20 px-5 py-2.5 text-sm font-semibold text-ink-foreground hover:bg-white/10"
+              >
+                Talk to us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer body */}
+      <div className={`${CONTAINER} pb-10 pt-12 sm:pt-16`}>
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <a href="#top" className="flex items-center gap-2" aria-label="FiFlowAI">
+              <img src={LOGO} alt="FiFlowAI" className="h-7 w-7 rounded-md" />
+            </a>
+            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
+              From store data to clear next steps — built for the operators behind the brand.
             </p>
-            <a href="mailto:hello@fiflowai.com" className="mt-3 inline-block text-sm text-muted-foreground hover:text-foreground">
-              hello@fiflowai.com
+            <a
+              href="mailto:hello@fiflowai.com"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm text-foreground"
+            >
+              <Mail01Icon size={14} /> hello@fiflowai.com
             </a>
           </div>
-          <div>
-            <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Product</div>
-            <ul className="mt-3 space-y-2 text-sm">
+
+          <div className="md:col-span-3">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Product
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
               <li><a href="#features" className="text-muted-foreground hover:text-foreground">Features</a></li>
               <li><a href="#sources" className="text-muted-foreground hover:text-foreground">Data sources</a></li>
               <li><a href="#operators" className="text-muted-foreground hover:text-foreground">Operators</a></li>
               <li><a href="#pricing" className="text-muted-foreground hover:text-foreground">Pricing</a></li>
             </ul>
           </div>
-          <div>
-            <div className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">Legal</div>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li><a href="https://app.fiflowai.com/privacy-policy" className="text-muted-foreground hover:text-foreground">Privacy Policy</a></li>
+
+          <div className="md:col-span-2">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Company
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              <li><Link to="/faq" className="text-muted-foreground hover:text-foreground">FAQ</Link></li>
+              <li><a href="mailto:hello@fiflowai.com" className="text-muted-foreground hover:text-foreground">Contact</a></li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-2">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+              Legal
+            </div>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              <li><a href="https://app.fiflowai.com/privacy-policy" className="text-muted-foreground hover:text-foreground">Privacy</a></li>
               <li><a href="https://app.fiflowai.com/terms-and-conditions" className="text-muted-foreground hover:text-foreground">Terms</a></li>
             </ul>
           </div>
         </div>
-        <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} FiFlowAI. All rights reserved.
+
+        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+          <div>© {new Date().getFullYear()} FiFlowAI. All rights reserved.</div>
+          <div className="flex items-center gap-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            All systems operational
+          </div>
         </div>
       </div>
     </footer>
