@@ -3,7 +3,8 @@
   "buildCommand": "bun run build",
   "outputDirectory": ".output/public",
   "framework": null,
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/((?!api|assets|fonts|.*\\..*).*)", "destination": "/index.html" }
   ]
 }
