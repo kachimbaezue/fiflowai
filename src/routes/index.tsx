@@ -198,7 +198,7 @@ function Hero() {
             aria-hidden
             className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-accent/20 via-transparent to-accent/10 blur-2xl"
           />
-          <div className="overflow-hidden rounded-t-2xl border border-b-0 border-border bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
+          <div className="overflow-hidden rounded-2xl bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
             <img
               src="/hero-preview.png"
               alt="FiFlowAI dashboard preview"
