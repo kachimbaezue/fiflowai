@@ -160,13 +160,9 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-muted/40">
-      {/* ambient blobs */}
-      <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 flex justify-center">
-        <div className="h-[420px] w-[820px] max-w-full rounded-full bg-accent/15 blur-3xl" />
-      </div>
+    <section id="top" className="relative overflow-hidden bg-background">
 
-      <div className={`${CONTAINER} pt-10 pb-0 sm:pt-16`}>
+      <div className={`${CONTAINER} pt-10 pb-16 sm:pt-16 sm:pb-24`}>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
           <h1 className="text-[1.9rem] leading-[1.05] sm:text-5xl md:text-[3.5rem]">
             From store data to <br className="hidden md:block" /> clear next steps.
@@ -194,10 +190,6 @@ function Hero() {
 
         {/* Hero preview — bleeds into next section */}
         <div className="relative mx-auto mt-12 max-w-5xl">
-          <div
-            aria-hidden
-            className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-accent/20 via-transparent to-accent/10 blur-2xl"
-          />
           <div className="overflow-hidden rounded-2xl bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
             <img
               src="/hero-preview.png"
