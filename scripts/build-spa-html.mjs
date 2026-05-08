@@ -5,7 +5,11 @@ const clientDir = 'dist/client';
 const assetsDir = path.join(clientDir, 'assets');
 const files = fs.readdirSync(assetsDir);
 
-const mainJs = files.find(f => /^main-.*\.js$/.test(f)) || files.find(f => /^index-.*\.js$/.test(f));
+const jsFiles = files.filter(f => /^main-.*\.js$/.test(f) || /^index-.*\.js$/.test(f));
+const mainJs = jsFiles.length > 0 
+  ? jsFiles.sort((a, b) => fs.statSync(path.join(assetsDir, b)).size - fs.statSync(path.join(assetsDir, a)).size)[0]
+  : null;
+
 const css = files.find(f => /^styles-.*\.css$/.test(f));
 
 if (!mainJs) {

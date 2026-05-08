@@ -169,7 +169,7 @@ function Hero() {
       <div className={`${CONTAINER} pt-10 pb-0 sm:pt-16`}>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
           <h1 className="text-[1.9rem] leading-[1.05] sm:text-5xl md:text-[3.5rem]">
-            From store data to clear next steps.
+            From store data to <br className="hidden md:block" /> clear next steps.
           </h1>
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
             FiFlowAI explains what&apos;s happening in your store, why it&apos;s happening, and the
