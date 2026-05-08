@@ -17,7 +17,7 @@ import {
   Remove01Icon,
   Menu01Icon,
   Cancel01Icon,
-  FlashIcon,
+  
 } from "hugeicons-react";
 
 export const Route = createFileRoute("/")({
