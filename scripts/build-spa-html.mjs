@@ -11,11 +11,24 @@ if (!fs.existsSync(assetsDir)) {
 
 const files = fs.readdirSync(assetsDir);
 
-// Find the main JS bundle (largest file starting with index- or main-)
-const jsFiles = files.filter(f => /^main-.*\.js$/.test(f) || /^index-.*\.js$/.test(f));
-const mainJs = jsFiles.length > 0 
-  ? jsFiles.sort((a, b) => fs.statSync(path.join(assetsDir, b)).size - fs.statSync(path.join(assetsDir, a)).size)[0]
-  : null;
+// Find the JS file that contains 'hydrateRoot' - this is our entry point
+let mainJs = null;
+const jsFiles = files.filter(f => f.endsWith('.js'));
+
+for (const file of jsFiles) {
+  const content = fs.readFileSync(path.join(assetsDir, file), 'utf8');
+  if (content.includes('hydrateRoot')) {
+    mainJs = file;
+    break;
+  }
+}
+
+// Fallback to largest if not found (though it should be found)
+if (!mainJs) {
+  mainJs = jsFiles.length > 0 
+    ? jsFiles.sort((a, b) => fs.statSync(path.join(assetsDir, b)).size - fs.statSync(path.join(assetsDir, a)).size)[0]
+    : null;
+}
 
 // Find the styles CSS
 const cssFile = files.find(f => /^styles-.*\.css$/.test(f));
@@ -25,46 +38,24 @@ if (!mainJs) {
   process.exit(1);
 }
 
-console.log(`Using main JS: ${mainJs}`);
+console.log(`Using main JS (entry point): ${mainJs}`);
 if (cssFile) console.log(`Using CSS: ${cssFile}`);
 
 const template = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <base href="/">
     <link rel="icon" type="image/png" href="https://app.fiflowai.com/fiflow-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FiFlowAI — From store data to clear next steps</title>
     <meta name="description" content="FiFlowAI explains what's happening in your store, why, and the actions to take next.">
     ${cssFile ? `<link rel="stylesheet" href="/assets/${cssFile}">` : ''}
-    <script>
-      // TanStack Start/Router hydration globals to prevent white screen crashes
-      window.$_TSR = {
-        buffer: [],
-        initialized: false,
-        router: {
-          matches: [],
-          manifest: { routes: {} },
-          dehydratedData: null
-        }
-      };
-      console.log('FiFlowAI SPA shell initialized');
-    </script>
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" crossorigin src="/assets/${mainJs}"></script>
-    <script>
-      // Fallback for hydration - mark as hydrated once app starts
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const root = document.getElementById('root');
-          if (root && root.innerHTML === '') {
-            console.warn('Hydration might have failed. If you see this, check console for JS errors.');
-          }
-        }, 1000);
-      });
-    </script>
+    <!-- Load the entry point bundle -->
+    <script type="module" src="/assets/${mainJs}"></script>
 </body>
 </html>`;
 
