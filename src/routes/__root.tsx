@@ -33,50 +33,14 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "FiFlowAI" },
-      { name: "description", content: "FiflowAI helps e-commerce businesses make smarter decisions with AI-powered analytics, inventory forecasting, and actionable insights from your sales data." },
-      { name: "keywords", content: "FiFlowAI, AI analytics, ecommerce intelligence, inventory forecasting, retail AI, Shopify analytics, sales insights" },
-      { name: "author", content: "FiFlowAI" },
-      { property: "og:site_name", content: "FiFlowAI" },
-      { property: "og:title", content: "FiFlowAI" },
-      { property: "og:description", content: "FiflowAI helps e-commerce businesses make smarter decisions with AI-powered analytics, inventory forecasting, and actionable insights from your sales data." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "FiFlowAI" },
-      { name: "twitter:description", content: "FiflowAI helps e-commerce businesses make smarter decisions with AI-powered analytics, inventory forecasting, and actionable insights from your sales data." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/0BtFq3SFcraEZjS8SN7Gvo7hrln2/social-images/social-1778168852106-Screenshot_2026-05-06_165332.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/0BtFq3SFcraEZjS8SN7Gvo7hrln2/social-images/social-1778168852106-Screenshot_2026-05-06_165332.webp" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
 
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
-
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
