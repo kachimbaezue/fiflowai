@@ -185,12 +185,11 @@ function Hero() {
             </a>
             <a
               href="#features"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
             >
               See how it works
             </a>
           </div>
-          <p className="text-xs text-muted-foreground">No credit card required · Connect Shopify in 2 minutes</p>
         </div>
 
         {/* Hero preview — bleeds into next section */}
