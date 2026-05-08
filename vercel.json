@@ -1,10 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "bun run build",
-  "outputDirectory": ".output/public",
+  "buildCommand": "bun run build && node scripts/build-spa-html.mjs",
+  "outputDirectory": "dist/client",
   "framework": null,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/((?!api|assets|fonts|.*\\..*).*)", "destination": "/index.html" }
+    { "source": "/((?!assets|fonts|.*\\..*).*)", "destination": "/index.html" }
   ]
 }

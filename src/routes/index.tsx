@@ -168,12 +168,8 @@ function Hero() {
 
       <div className={`${CONTAINER} pt-10 pb-0 sm:pt-16`}>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
-          <h1 className="text-[2.1rem] leading-[1.05] sm:text-5xl md:text-[3.5rem]">
-            From store data to{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10">clear next steps.</span>
-              <span aria-hidden className="absolute inset-x-0 bottom-1 -z-0 h-3 rounded-sm bg-accent/20" />
-            </span>
+          <h1 className="text-[1.9rem] leading-[1.05] sm:text-5xl md:text-[3.5rem]">
+            From store data to clear next steps.
           </h1>
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
             FiFlowAI explains what&apos;s happening in your store, why it&apos;s happening, and the
@@ -189,12 +185,11 @@ function Hero() {
             </a>
             <a
               href="#features"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+              className="hidden sm:inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
             >
               See how it works
             </a>
           </div>
-          <p className="text-xs text-muted-foreground">No credit card required · Connect Shopify in 2 minutes</p>
         </div>
 
         {/* Hero preview — bleeds into next section */}
@@ -203,7 +198,7 @@ function Hero() {
             aria-hidden
             className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-accent/20 via-transparent to-accent/10 blur-2xl"
           />
-          <div className="overflow-hidden rounded-t-2xl border border-b-0 border-border bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
+          <div className="overflow-hidden rounded-2xl bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
             <img
               src="/hero-preview.png"
               alt="FiFlowAI dashboard preview"
