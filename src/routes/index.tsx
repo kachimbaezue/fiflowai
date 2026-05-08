@@ -160,18 +160,14 @@ function Nav() {
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden">
+    <section id="top" className="relative overflow-hidden bg-muted/40">
       {/* ambient blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 flex justify-center">
         <div className="h-[420px] w-[820px] max-w-full rounded-full bg-accent/15 blur-3xl" />
       </div>
 
-      <div className={`${CONTAINER} pt-10 pb-12 sm:pt-16 sm:pb-20`}>
+      <div className={`${CONTAINER} pt-10 pb-0 sm:pt-16`}>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
-          <span className="inline-flex animate-[fade-in_0.6s_ease-out] items-center gap-1.5 rounded-full border border-border bg-surface/70 px-3 py-1 text-[11px] font-medium text-muted-foreground backdrop-blur">
-            <FlashIcon size={12} className="text-accent" />
-            Insights that act like an analyst
-          </span>
           <h1 className="text-[2.1rem] leading-[1.05] sm:text-5xl md:text-[3.5rem]">
             From store data to{" "}
             <span className="relative inline-block">
@@ -181,36 +177,37 @@ function Hero() {
           </h1>
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
             FiFlowAI explains what&apos;s happening in your store, why it&apos;s happening, and the
-            actions to take next — without the manual analysis.
+            exact actions to take next. No dashboards to learn, no manual analysis.
           </p>
           <div className="flex flex-col items-center justify-center gap-2.5 sm:flex-row sm:gap-3">
             <a
-              href="https://app.fiflowai.com/upgrade"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-ink-foreground shadow-[0_10px_30px_-12px_rgba(49,53,109,0.6)] transition-all hover:shadow-[0_16px_40px_-12px_rgba(49,53,109,0.8)]"
+              href="https://app.fiflowai.com"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-ink-foreground shadow-[0_10px_30px_-12px_rgba(49,53,109,0.6)] transition-all hover:shadow-[0_16px_40px_-12px_rgba(49,53,109,0.8)]"
             >
-              Start for free
+              Start analyzing free
               <ArrowRight02Icon size={16} className="transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
               href="#features"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted"
             >
               See how it works
             </a>
           </div>
+          <p className="text-xs text-muted-foreground">No credit card required · Connect Shopify in 2 minutes</p>
         </div>
 
-        {/* Hero preview */}
-        <div className="relative mx-auto mt-12 max-w-4xl">
+        {/* Hero preview — bleeds into next section */}
+        <div className="relative mx-auto mt-12 max-w-5xl">
           <div
             aria-hidden
             className="absolute -inset-4 -z-10 rounded-[2rem] bg-gradient-to-tr from-accent/20 via-transparent to-accent/10 blur-2xl"
           />
-          <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
+          <div className="overflow-hidden rounded-t-2xl border border-b-0 border-border bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
             <img
               src="/hero-preview.png"
               alt="FiFlowAI dashboard preview"
-              className="h-auto w-full"
+              className="block h-auto w-full"
             />
           </div>
         </div>
