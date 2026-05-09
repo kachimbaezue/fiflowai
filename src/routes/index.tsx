@@ -393,32 +393,33 @@ function Operators() {
 function Pricing() {
   const plans = [
     {
-      name: "Starter",
-      price: "$29",
-      period: "/mo",
-      desc: "For new stores getting their first insights.",
-      cta: "Start for free",
+      name: "Standard",
+      price: "$39",
+      period: "/month",
+      desc: "Full FiFlow access: AI chat, insights, and store connections.",
+      subPrice: null,
+      cta: "Start Free Trial",
       featured: false,
       features: [
-        "Up to 1 connected store",
-        "Shopify, Meta Ads & GA",
-        "CSV / Excel uploads",
-        "Weekly insight digest",
+        "Unlimited AI questions on your data",
+        "Shopify & Meta Ads connections",
+        "Insight cards & history",
+        "Email support",
       ],
     },
     {
-      name: "Growth",
-      price: "$79",
-      period: "/mo",
-      desc: "For scaling brands that need answers fast.",
-      cta: "Get Growth",
+      name: "Annual bundle",
+      price: "$390",
+      period: "/year",
+      desc: "Same as Standard, billed once per year — best value.",
+      subPrice: "~$32.50/mo when paid annually",
+      cta: "Start Free Trial",
       featured: true,
       features: [
-        "Unlimited stores & sources",
-        "Daily action plans",
-        "Priority insight processing",
-        "Early access to Operators",
-        "Email & chat support",
+        "Everything in Standard",
+        "Lower effective monthly rate",
+        "Priority onboarding help",
+        "Locked-in price for 12 months",
       ],
     },
   ];
@@ -445,7 +446,7 @@ function Pricing() {
               {p.featured && (
                 <>
                   <span className="absolute right-4 top-4 rounded-full bg-ink-foreground/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
-                    Popular
+                    Best value
                   </span>
                   <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
                 </>
@@ -460,6 +461,11 @@ function Pricing() {
                   {p.period}
                 </span>
               </div>
+              {p.subPrice && (
+                <div className={`mt-1 text-sm font-medium ${p.featured ? "text-ink-foreground/80" : "text-muted-foreground"}`}>
+                  {p.subPrice}
+                </div>
+              )}
               <a
                 href="https://app.fiflowai.com/upgrade"
                 className={
