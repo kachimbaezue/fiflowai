@@ -23,14 +23,14 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FiFlowAI — From store data to clear next steps" },
+      { title: "FiFlowAI - From store data to clear next steps" },
       {
         name: "description",
         content:
           "FiFlowAI explains what's happening in your store, why, and the actions to take next. Built for Shopify, Meta Ads, Google Analytics & more.",
       },
       { name: "keywords", content: "ecommerce AI, inventory forecasting, Shopify analytics, sales insights, AI analytics platform, retail intelligence" },
-      { property: "og:title", content: "FiFlowAI — From store data to clear next steps" },
+      { property: "og:title", content: "FiFlowAI - From store data to clear next steps" },
       {
         property: "og:description",
         content: "Turn complex store data into smart, actionable insights. Skip the manual analysis.",
@@ -188,7 +188,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Hero preview — bleeds into next section */}
+        {/* Hero preview - bleeds into next section */}
         <div className="relative mx-auto mt-12 max-w-5xl">
           <div className="overflow-hidden rounded-2xl bg-surface shadow-[0_40px_100px_-40px_rgba(49,53,109,0.4)]">
             <img
@@ -211,13 +211,13 @@ function Features() {
           <SectionLabel>Features</SectionLabel>
           <h2 className="max-w-2xl text-3xl sm:text-4xl">Your AI partner for store decisions.</h2>
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
-            Built for operators who want answers — not another analytics tool to learn.
+            Built for operators who want answers - not another analytics tool to learn.
           </p>
         </div>
 
         {/* Bento grid */}
         <div className="mt-10 grid grid-cols-1 gap-3 md:grid-cols-3 md:grid-rows-2">
-          {/* Big card — the why */}
+          {/* Big card - the why */}
           <div className="group relative overflow-hidden rounded-2xl border border-border bg-surface p-6 md:col-span-2 md:row-span-2">
             <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               <Brain02Icon size={14} className="text-accent" /> Understands the why
@@ -230,13 +230,13 @@ function Features() {
               <div className="flex items-start gap-3 rounded-xl border border-border bg-background p-3">
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent text-[10px] font-bold">1</span>
                 <p className="text-sm text-foreground">
-                  Revenue is up <span className="font-semibold">+18.4%</span> this week — driven by your Lookalike 1% set.
+                  Revenue is up <span className="font-semibold">+18.4%</span> this week - driven by your Lookalike 1% set.
                 </p>
               </div>
               <div className="flex items-start gap-3 rounded-xl border border-border bg-background p-3">
                 <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent text-[10px] font-bold">2</span>
                 <p className="text-sm text-foreground">
-                  ROAS dropped on Search — pause 3 underperformers to recover ~<span className="font-semibold">$420/wk</span>.
+                  ROAS dropped on Search - pause 3 underperformers to recover ~<span className="font-semibold">$420/wk</span>.
                 </p>
               </div>
               <div className="flex items-start gap-3 rounded-xl border border-border bg-background p-3">
@@ -347,7 +347,7 @@ function DataSources() {
 
 function Operators() {
   const ops = [
-    { icon: CustomerService01Icon, title: "Customer Support", desc: "Handle common inquiries, FAQs and tickets automatically — around the clock." },
+    { icon: CustomerService01Icon, title: "Customer Support", desc: "Handle common inquiries, FAQs and tickets automatically - around the clock." },
     { icon: PackageDeliveredIcon, title: "Order Management", desc: "Track, update and follow up on orders. Catch issues before customers do." },
     { icon: TicketStarIcon, title: "Ticketing & Escalation", desc: "Route and prioritize tickets intelligently. Escalate only what truly needs a human." },
     { icon: Mail01Icon, title: "Follow-ups & Outreach", desc: "Send timely follow-ups after purchases, abandoned carts or support interactions." },
@@ -361,7 +361,7 @@ function Operators() {
             Coming soon
           </span>
           <h2 className="max-w-2xl text-3xl sm:text-4xl">
-            Operators — automation that does the work.
+            Operators - automation that does the work.
           </h2>
           <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
             Operators automate the repetitive work that eats your day, so you focus on what moves
@@ -411,7 +411,7 @@ function Pricing() {
       name: "Annual bundle",
       price: "$390",
       period: "/year",
-      desc: "Same as Standard, billed once per year — best value.",
+      desc: "Same as Standard, billed once per year - best value.",
       subPrice: "~$32.50/mo when paid annually",
       cta: "Start Free Trial",
       featured: true,
@@ -501,8 +501,8 @@ const FAQS = [
   { q: "Which platforms do you support?", a: "Shopify, Meta Ads, Google Analytics, and CSV / Excel uploads. More integrations are on the way." },
   { q: "How long does it take to set up?", a: "Most users are connected and getting their first insights in under 5 minutes." },
   { q: "Is my data secure?", a: "Yes. Data is encrypted in transit and at rest. We never sell or share your data, and you can disconnect any source at any time." },
-  { q: "Can I cancel anytime?", a: "Yes — both Starter and Growth plans are month-to-month with no lock-in." },
-  { q: "What are Operators?", a: "Operators are upcoming AI agents that handle repetitive operations — customer support, order updates, follow-ups and ticketing — on your behalf." },
+  { q: "Can I cancel anytime?", a: "Yes - both Starter and Growth plans are month-to-month with no lock-in." },
+  { q: "What are Operators?", a: "Operators are upcoming AI agents that handle repetitive operations - customer support, order updates, follow-ups and ticketing - on your behalf." },
 ];
 
 function FAQ() {
@@ -601,7 +601,7 @@ function Footer() {
               <img src={LOGO} alt="FiFlowAI" className="h-7 w-7 rounded-md" />
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              From store data to clear next steps — built for the operators behind the brand.
+              From store data to clear next steps - built for the operators behind the brand.
             </p>
             <a
               href="mailto:hello@fiflowai.com"

@@ -5,8 +5,8 @@ import { ArrowLeft02Icon, ArrowRight02Icon, Add01Icon, Remove01Icon } from "huge
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — FiFlowAI" },
-      { name: "description", content: "Answers to the most common questions about FiFlowAI — pricing, integrations, data, security." },
+      { title: "FAQ - FiFlowAI" },
+      { name: "description", content: "Answers to the most common questions about FiFlowAI - pricing, integrations, data, security." },
     ],
   }),
   component: FAQPage,
@@ -20,9 +20,9 @@ const FAQS = [
   { q: "Which platforms do you support?", a: "Shopify, Meta Ads, Google Analytics, and CSV / Excel uploads. More integrations are on the way." },
   { q: "How long does it take to set up?", a: "Most users are connected and getting their first insights in under 5 minutes." },
   { q: "Is my data secure?", a: "Yes. Data is encrypted in transit and at rest. We never sell or share your data, and you can disconnect any source at any time." },
-  { q: "Can I cancel anytime?", a: "Yes — both Starter and Growth plans are month-to-month with no lock-in." },
+  { q: "Can I cancel anytime?", a: "Yes - both Starter and Growth plans are month-to-month with no lock-in." },
   { q: "Do you offer a free trial?", a: "You can start on Starter for free and upgrade to Growth whenever you're ready." },
-  { q: "What are Operators?", a: "Operators are upcoming AI agents that handle repetitive operations — customer support, order updates, follow-ups and ticketing — on your behalf." },
+  { q: "What are Operators?", a: "Operators are upcoming AI agents that handle repetitive operations - customer support, order updates, follow-ups and ticketing - on your behalf." },
   { q: "How can I contact support?", a: "Email hello@fiflowai.com and we'll respond within one business day." },
 ];
 
