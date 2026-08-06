@@ -667,100 +667,88 @@ function Operators() {
 
 function Pricing() {
   const ref = useInView(0.1) as React.RefObject<HTMLElement>;
-  const plans = [
-    {
-      name: "Starter",
-      price: "$29",
-      period: "/mo",
-      desc: "For new stores getting their first insights.",
-      cta: "Get Started",
-      featured: false,
-      features: [
-        "Up to 1 connected store",
-        "Shopify, Meta Ads & GA",
-        "CSV / Excel uploads",
-        "Weekly insight digest",
-      ],
-    },
-    {
-      name: "Growth",
-      price: "$79",
-      period: "/mo",
-      desc: "For scaling brands that need answers fast.",
-      cta: "Get Growth",
-      featured: true,
-      features: [
-        "Unlimited stores & sources",
-        "Daily action plans",
-        "Priority insight processing",
-        "Early access to Operators",
-        "Email & chat support",
-      ],
-    },
+  const [yearly, setYearly] = useState(false);
+
+  const features = [
+    "Unlimited Agentic Chat (Deep Investigation)",
+    "Full Shopify, Meta Ads & GA4 Sync",
+    "Daily Proactive Insights & Anomaly Alerts",
+    "Inventory-Aware Ad Optimization",
+    "Hourly Monitoring & Anomaly Alerts",
+    "Net Profit Audit Tool",
+    "Priority 1-on-1 Onboarding & Support",
   ];
+
   return (
     <section ref={ref} id="pricing" className="py-16 sm:py-24">
       <div className={CONTAINER}>
-        <div className="flex flex-col items-start gap-3 sm:items-center sm:text-center">
-          <div className="animate-fade-up delay-0"><SectionLabel>Pricing</SectionLabel></div>
-          <h2 className="animate-fade-up delay-100 max-w-2xl text-3xl sm:text-4xl">Simple plans. Real outcomes.</h2>
-          <p className="animate-fade-up delay-200 max-w-xl text-sm text-muted-foreground sm:text-base">
-            Pick the plan that fits your store. Upgrade or cancel anytime.
-          </p>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
-          {plans.map((p, i) => (
-            <div
-              key={p.name}
-              className={`animate-fade-up delay-${i === 0 ? "200" : "300"} ${
-                p.featured
-                  ? "relative overflow-hidden rounded-xl border border-ink bg-ink p-6 text-ink-foreground shadow-[0_30px_60px_-30px_rgba(49,53,109,0.6)] sm:p-8"
-                  : "relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-8"
+
+        {/* Billing switcher */}
+        <div className="flex justify-center">
+          <div className="animate-fade-up delay-0 inline-flex items-center gap-1 rounded-full border border-border bg-surface p-1">
+            <button
+              onClick={() => setYearly(false)}
+              className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
+                !yearly ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              {p.featured && (
-                <>
-                  <span className="absolute right-4 top-4 rounded-full bg-ink-foreground/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
-                    Popular
-                  </span>
-                  <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
-                </>
-              )}
-              <div className="text-sm font-semibold">{p.name}</div>
-              <div className={`mt-1 text-xs ${p.featured ? "text-ink-foreground/70" : "text-muted-foreground"}`}>
-                {p.desc}
-              </div>
-              <div className="mt-5 flex items-baseline gap-1">
-                <span className="font-display text-5xl">{p.price}</span>
-                <span className={p.featured ? "text-sm text-ink-foreground/70" : "text-sm text-muted-foreground"}>
-                  {p.period}
-                </span>
-              </div>
-              <a
-                href="https://app.fiflowai.com/upgrade"
-                className={
-                  p.featured
-                    ? "group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-ink-foreground px-4 py-2.5 text-sm font-semibold text-ink hover:opacity-90"
-                    : "group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-ink px-4 py-2.5 text-sm font-semibold text-ink-foreground hover:opacity-90"
-                }
-              >
-                {p.cta}
-                <ArrowUpRight02Icon size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-              <ul className="mt-6 space-y-2.5">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <CheckmarkCircle02Icon
-                      size={16}
-                      className={p.featured ? "mt-0.5 text-ink-foreground/80" : "mt-0.5 text-accent"}
-                    />
-                    <span className={p.featured ? "text-ink-foreground/90" : ""}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              Monthly
+            </button>
+            <button
+              onClick={() => setYearly(true)}
+              className={`inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
+                yearly ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Yearly
+              <span className="rounded-full bg-accent/20 px-1.5 py-0.5 text-[10px] font-semibold text-accent">
+                Save 17%
+              </span>
+            </button>
+          </div>
         </div>
+
+        {/* Single plan card */}
+        <div className="mx-auto mt-8 max-w-md">
+          <div className="animate-scale-in delay-100 relative overflow-hidden rounded-2xl border border-ink bg-ink p-8 text-ink-foreground shadow-[0_30px_60px_-30px_rgba(49,53,109,0.6)]">
+            <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+
+            <div className="text-sm font-semibold tracking-wide uppercase text-ink-foreground/60">FiFlow Pro</div>
+
+            <div className="mt-4 flex items-end gap-2">
+              <span className="font-display text-6xl leading-none">
+                {yearly ? "$390" : "$39"}
+              </span>
+              <span className="mb-1 text-sm text-ink-foreground/60">
+                {yearly ? "/year" : "/month"}
+              </span>
+            </div>
+
+            {yearly && (
+              <p className="mt-1.5 text-sm font-medium text-ink-foreground/70">
+                $32.50 / mo — save 17%
+              </p>
+            )}
+
+            <a
+              href="https://app.fiflowai.com/upgrade"
+              className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-ink-foreground px-4 py-3 text-sm font-semibold text-ink transition-all hover:opacity-90"
+            >
+              Get started
+              <ArrowUpRight02Icon size={14} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+
+            <ul className="mt-7 space-y-3">
+              {features.map((f) => (
+                <li key={f} className="flex items-start gap-3 text-sm">
+                  <CheckmarkCircle02Icon size={16} className="mt-0.5 shrink-0 text-ink-foreground/70" />
+                  <span className="text-ink-foreground/90">{f}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
   );
