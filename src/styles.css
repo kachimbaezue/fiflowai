@@ -80,15 +80,16 @@
     border-color: var(--color-border);
   }
   html, body {
-    overflow-x: hidden;
     max-width: 100vw;
   }
   html {
+    overflow-x: clip;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
   body {
+    overflow-x: clip;
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -102,4 +103,96 @@
 
 @utility font-display {
   font-family: var(--font-display);
+}
+
+/* ── Scroll & entrance animations ─────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 0.5s ease forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+  animation: slide-left 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  animation: slide-right 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  opacity: 0;
+  animation: scale-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger delays */
+.delay-0   { animation-delay: 0ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Only run animations when in view */
+.in-view { /* class toggled by JS */ }
+.animate-fade-up,
+.animate-fade-in,
+.animate-slide-left,
+.animate-slide-right,
+.animate-scale-in {
+  animation-play-state: paused;
+}
+.in-view .animate-fade-up,
+.in-view .animate-fade-in,
+.in-view .animate-slide-left,
+.in-view .animate-slide-right,
+.in-view .animate-scale-in {
+  animation-play-state: running;
+}
+
+/* Hero plays immediately on load */
+.hero-animate .animate-fade-up,
+.hero-animate .animate-slide-left,
+.hero-animate .animate-slide-right {
+  animation-play-state: running;
 }
